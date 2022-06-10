@@ -1,10 +1,11 @@
 input.onButtonPressed(Button.A, function () {
     terning = randint(1, 6)
-    basic.showString("Kast")
     basic.showNumber(terning)
     Antall_kast += 1
     Sum_terningkast += terning
     Gjennomsnitt = Sum_terningkast / Antall_kast
+    serial.writeValue("x", Antall_kast)
+    serial.writeValue("\"y\"", Gjennomsnitt)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showString("Snitt")
